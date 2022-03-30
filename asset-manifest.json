@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/arquiterra/static/css/main.d2f0bcc5.css",
+    "main.js": "/arquiterra/static/js/main.eabfdd4b.js",
+    "static/media/contract.jpg": "/arquiterra/static/media/contract.26e54c30b53d5eba8955.jpg",
+    "index.html": "/arquiterra/index.html",
+    "main.d2f0bcc5.css.map": "/arquiterra/static/css/main.d2f0bcc5.css.map",
+    "main.eabfdd4b.js.map": "/arquiterra/static/js/main.eabfdd4b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d2f0bcc5.css",
+    "static/js/main.eabfdd4b.js"
+  ]
+}
