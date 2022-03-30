@@ -8,7 +8,7 @@ import { ScrollToTop } from "../hooks/ScrollToTop";
 
 export const AppRouter = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <ScrollToTop>
         <Routes>
           <Route path="/" element={<HomePage />} />
