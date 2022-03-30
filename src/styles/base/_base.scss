@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+// *            GOBLAL CONFIGS          * //
+
+button {
+  all: unset;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.marginSide {
+  margin: 0 2em;
+  // width: 95%;
+  // max-width: 1200px;
+}
+
+.notSeen {
+  opacity: 0;
+}
+
+.noBorder {
+  text-decoration: none;
+}
+
+.negativeZindex {
+  z-index: -1 !important;
+}
+@media only screen and (min-width: 768px) {
+  .marginSide {
+    margin: 0 4em;
+  }
+}
+
+.homepage-title {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 3rem;
+  margin-bottom: 1em;
+  .homepage-titleSpan {
+    font-size: 4.5rem;
+  }
+}
+
+.contentTitle {
+  margin-bottom: 1em;
+  font-weight: 700;
+  span {
+    color: #ca2527;
+  }
+}
+
+.boton-rojo {
+  color: #fff;
+  background-color: #ca2527;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.difumidado-rojo {
+  background-color: rgba(#ca2527, 0.6) !important;
+}
+
+.boton-negro {
+  color: #fff;
+  background-color: #2a2932;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.difumidado-negro {
+  background-color: rgba(#2a2932, 0.6) !important;
+}
+
+.form-group {
+  input {
+    all: unset;
+    border-bottom: 1px solid #ca2527;
+    width: 15em;
+  }
+  ::placeholder {
+    color: #fff;
+  }
+
+  .form-labelMensaje {
+    background-color: #fff;
+    height: 10em;
+    width: 100%;
+    color: #2a2932;
+    text-align: start;
+    resize: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .homepage-title {
+    display: block;
+    width: 100%;
+    font-size: 10vw;
+    .homepage-titleSpan {
+      all: unset;
+    }
+  }
+}

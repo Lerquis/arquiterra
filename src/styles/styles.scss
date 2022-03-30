@@ -1,0 +1,23 @@
+@import "./base/base";
+@import "./base/settings";
+
+// ?Global Styles
+@import "./components/topbar";
+@import "./components/footer";
+
+// ?HomePage Styles
+
+@import "./components/landingpage";
+@import "./components/servicios";
+@import "./components/proyectosHP";
+
+// ?Projects Styles
+@import "./components/projectsLanding";
+@import "./components/projectsProjects";
+
+// ?Project Styles
+@import "./components/projectLanding";
+@import "./components/projectInfo";
+
+// ?Contact Styles
+@import "./components/contact";
