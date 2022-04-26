@@ -54,7 +54,7 @@ export const ProjectInfo = () => {
               {indx === index && (
                 <img
                   className="projectInfo-backgroundImage"
-                  src={`../assets/${img}.jpg`}
+                  src={`${process.env.PUBLIC_URL}/assets/${img}.jpg`}
                 />
               )}
             </div>

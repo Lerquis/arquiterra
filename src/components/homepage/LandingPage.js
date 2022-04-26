@@ -30,6 +30,13 @@ export const LandingPage = () => {
     return () => clearInterval(slider);
   }, [index]);
 
+  //! IMPORTANTE
+  // ?Como la pagina esta subida en gh pages, no funciona poner
+  // ?de src='./assets/${img}.jpg' porque la direccion esta mal
+  // ?al utilizar gh pages, el ./ debe de cambiar por el process.env.url
+  // ?ya que esta es = /arquiterra, es decir la raiz del proyecto
+  // !IMPORTANTE
+
   return (
     <div className="landingPage landingObserver">
       <section className="landingPage-slider">
@@ -42,13 +49,25 @@ export const LandingPage = () => {
               {indx === index && (
                 <img
                   className="landing-backgroundImage"
-                  src={`./assets/${img}.jpg`}
-                  // style={{
-                  //   background: `url(./assets/${img}.jpg)`,
+                  src={`${process.env.PUBLIC_URL}/assets/${img}.jpg`}
+                />
+              )}
+            </div>
+          );
+        })}
+      </section>
 
-                  //   backgroundRepeat: "no-repeat",
-                  //   backgroundSize: "cover",
-                  // }}
+      <section className="landingPage-slider-desktop">
+        {imgsSlider.map((img, indx) => {
+          return (
+            <div
+              className={indx === index ? "slide active" : "slide"}
+              key={indx}
+            >
+              {indx === index && (
+                <img
+                  className="landing-backgroundImage"
+                  src={`${process.env.PUBLIC_URL}/assets/${img}.jpg`}
                 />
               )}
             </div>
@@ -58,7 +77,8 @@ export const LandingPage = () => {
 
       <div className="landing-slogan">
         <div className="landing-sloganFondo"></div>
-        <h1>
+        <div className="landing-sloganFondo-desktop"></div>
+        <h1 className="mobile">
           <span className="izq">
             Unimos
             <br />
@@ -69,6 +89,11 @@ export const LandingPage = () => {
             <br />
             suenos
           </span>
+        </h1>
+
+        <h1 className="desktop">
+          Unimos ideas <br />
+          Construimos suenos
         </h1>
 
         <div className="arrows">

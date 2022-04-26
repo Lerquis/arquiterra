@@ -14,6 +14,9 @@
   align-items: center;
   overflow: hidden;
 }
+.landingPage-slider-desktop {
+  display: none;
+}
 
 .slide {
   opacity: 0;
@@ -30,6 +33,7 @@
   //color: #fff;
   font-size: 0.8rem;
   margin-top: 2em;
+  overflow-x: hidden;
 
   .landing-sloganFondo {
     background-color: $primary;
@@ -40,8 +44,17 @@
     // ?Para dejar el cuadrado en su mismo lugar
     margin-top: -1.5em;
   }
-  h1 {
-    margin-top: 1.5em;
+  .landing-sloganFondo-desktop {
+    display: none;
+    background-color: $primary;
+    position: absolute;
+    z-index: -1;
+    height: 12em;
+    width: 50%;
+    margin-top: -1.5em;
+  }
+  .mobile {
+    //margin-top: 1.5em;
     // ?Para centrar el texto de manera igual que figma
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -53,6 +66,9 @@
     .der {
       color: $primary;
     }
+  }
+  .desktop {
+    display: none;
   }
 
   .arrows {
@@ -90,54 +106,76 @@
 }
 
 @media only screen and (min-width: 1200px) {
-  .landing-backgroundImage {
-    width: 100vw;
+  .landingPage {
     height: 100vh;
-    object-fit: cover;
-    filter: brightness(0.6);
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    align-items: flex-start;
+    transform: translateY(20%);
   }
+
+  .landingPage-slider-desktop {
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: translate(40%);
+    max-width: 65%;
+    max-height: 55%;
+  }
+
+  .landingPage-slider {
+    display: none;
+  }
+  .landing-backgroundImage {
+    object-fit: cover;
+    width: auto;
+    height: auto;
+  }
+
   .landing-slogan {
-    //color: #fff;
-    display: block;
-    position: absolute;
-    top: 30%;
-    left: 8%;
-    font-size: 1.6rem;
-    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
     .landing-sloganFondo {
-      background-color: rgba($color: #fff, $alpha: 0.4);
+      display: none;
+    }
+    .landing-sloganFondo-desktop {
+      display: block;
       position: absolute;
-      align-content: center;
-      transform: translate(-50%, -70%);
+      transform: translateY(-21%);
       z-index: -1;
       left: 0;
-      height: 90vh;
-      width: 100%;
-      // ?Para dejar el cuadrado en su mismo lugar
-      margin-top: -1.5em;
-      backdrop-filter: blur(0.1em);
+      height: 101%;
+      width: 50%;
     }
 
     .arrows {
+      gap: 10em;
+      .btnArrowIzq {
+        path {
+          fill: $primary;
+        }
+      }
+    }
+    .mobile {
       display: none;
     }
-    h1 {
-      .der {
-        color: #fff;
-      }
-      .izq {
-        color: $primary;
-      }
+    .desktop {
+      line-height: 2.2em;
+      height: 7.5em;
+      transform: translate(-5%);
+      margin-top: 1em;
+      font-size: 3.5em;
+      display: block;
+      color: $primary;
     }
   }
   .slide {
-    opacity: 0.8;
-    transform: scale(1);
-  }
-
-  .slide.active {
     opacity: 1;
-    transition: all 3s ease;
-    transform: scale(1.08);
   }
 }

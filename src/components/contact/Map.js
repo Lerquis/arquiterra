@@ -13,7 +13,7 @@ export const Map = () => {
   const position = [10.325242, -84.431761];
   return (
     <div
-      className="map negativeZindex animate__animated"
+      className="map negativeZindex animate__animated "
       data-porcentaje="mitad"
       data-animacion="fadeInDown"
     >

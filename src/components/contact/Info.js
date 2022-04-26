@@ -4,7 +4,7 @@ export const Info = () => {
   return (
     <div className="contact-info marginSide">
       <div
-        className="contact-info-bloque notSeen animate__animated"
+        className="contact-info-bloque animate__animated "
         data-porcentaje="mitad"
         data-animacion="fadeIn"
       >

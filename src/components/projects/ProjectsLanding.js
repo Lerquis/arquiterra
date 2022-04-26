@@ -35,7 +35,7 @@ export const ProjectsLanding = () => {
         data-direction="vertical"
       >
         <img
-          src="./assets/casaFlorencia.jpg"
+          src={`${process.env.PUBLIC_URL}/assets/casaFlorencia.jpg`}
           className="animate__animated"
           data-porcentaje="mitad"
           data-animacion="fadeInLeft"
@@ -43,7 +43,7 @@ export const ProjectsLanding = () => {
         <div
           data-porcentaje="mitad"
           data-animacion="fadeIn"
-          className="projectsLandingPage-lastProject-content animate__animated"
+          className="projectsLandingPage-lastProject-content animate__animated "
         >
           <svg viewBox="0 0 39 34" fill="none">
             <path d="M19.5 0L38.9856 33.75H0.0144291L19.5 0Z" fill="white" />

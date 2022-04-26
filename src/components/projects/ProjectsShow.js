@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const ProjectsShow = () => {
   return (
@@ -7,18 +8,20 @@ export const ProjectsShow = () => {
       data-porcentaje="mitad"
       data-animacion="fadeIn"
     >
-      <div className="projectsLandingPage-projects-project">
-        <img src="./assets/casaFlorencia.jpg" />
-        <div className="projectsLandingPage-projects-project-content">
-          <p className="projectsLandingPage-projects-project-content-project">
-            Proyecto <span>Aserri</span>
-          </p>
+      <Link to={"/project/aserri"} style={{ textDecoration: "none" }}>
+        <div className="projectsLandingPage-projects-project">
+          <img src={`${process.env.PUBLIC_URL}/assets/casaFlorencia.jpg`} />
+          <div className="projectsLandingPage-projects-project-content">
+            <p className="projectsLandingPage-projects-project-content-project">
+              Proyecto <span>Aserri</span>
+            </p>
 
-          <p className="projectsLandingPage-projects-project-content-features">
-            Casa Rural/Moderna/Terraza
-          </p>
+            <p className="projectsLandingPage-projects-project-content-features">
+              Casa Rural/Moderna/Terraza
+            </p>
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };

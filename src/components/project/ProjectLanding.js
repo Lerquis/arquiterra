@@ -4,7 +4,7 @@ export const ProjectLanding = () => {
   return (
     <div className="projectLanding landingObserver">
       <div className="projectLanding-basicInfo">
-        <img src="../assets/casaFlorencia.jpg" />
+        <img src={`${process.env.PUBLIC_URL}/assets/casaFlorencia.jpg`} />
         <div
           className="projectLanding-basicInfo-content animate__animated"
           data-porcentaje="mitad"

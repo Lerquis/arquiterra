@@ -1,6 +1,7 @@
 .projects-projects {
   max-width: 100vw;
   margin-bottom: 5em;
+
   .projectsLandingPage-projects {
     margin-bottom: 2em;
     img {
@@ -17,6 +18,7 @@
         padding: 1em;
         width: 50%;
         transform: translateX(-200%);
+        color: $primary;
         background-color: rgba($color: #fff, $alpha: 0.7);
         .projectsLandingPage-projects-project-content-project {
           font-size: 1.8em;

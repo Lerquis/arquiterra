@@ -3,10 +3,6 @@ import { Link } from "react-router-dom";
 import { Proyecto } from "./Proyecto";
 
 export const Proyectos = () => {
-  const handleClick = () => {
-    // TODO: Redireccionar a ver todos los proyectos
-    console.log("Ver todos los proyectos");
-  };
   return (
     <div className="proyectosHP">
       <h2
@@ -24,7 +20,7 @@ export const Proyectos = () => {
       <Proyecto />
 
       <Link to={"/projects"} className="noBorder">
-        <button type="button" className="boton-rojo" onClick={handleClick}>
+        <button type="button" className="boton-rojo">
           Ver todos los proyectos
         </button>
       </Link>

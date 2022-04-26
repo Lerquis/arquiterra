@@ -7,6 +7,27 @@
 
 // *            GOBLAL CONFIGS          * //
 
+.lineas {
+  display: none;
+}
+
+@media only screen and (min-width: 1200px) {
+  .lineas {
+    background-color: #2a2932;
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    div {
+      background-color: #fff;
+      border-left: 0.5px solid rgba($color: #2a2932, $alpha: 0.1);
+    }
+  }
+}
+
 button {
   all: unset;
   &:hover {

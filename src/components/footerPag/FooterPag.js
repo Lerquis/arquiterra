@@ -23,9 +23,6 @@ export const FooterPag = ({ url = "./" }) => {
     }, 1000);
   };
 
-  const handleHomePage = () => {
-    console.log("HomePage");
-  };
   return (
     <div
       className="footer animate__animated notSeen topbarObserver"
@@ -150,7 +147,7 @@ export const FooterPag = ({ url = "./" }) => {
         </form>
       </div>
       <div className="footer-logo">
-        <img src={`${url}assets/Logo.svg`} onClick={handleHomePage} />
+        {/* <img src={`${process.env.PUBLIC_URL}/assets/Logo.svg`} /> */}
       </div>
     </div>
   );

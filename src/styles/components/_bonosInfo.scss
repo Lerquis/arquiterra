@@ -1,0 +1,69 @@
+.bonosVivienda {
+  .homepage-title {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    font-size: 2em !important;
+    .homepage-titleSpan {
+      font-size: 1.2em !important;
+    }
+  }
+
+  .bonosVivienda-informacion {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 5em auto;
+    .bonoVivienda-informacion-contenido {
+      margin-bottom: 2em;
+      .pregunta {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .bonosVivienda {
+    .homepage-title {
+      margin-top: 4em;
+    }
+    .bonosVivienda-informacion {
+      width: 70%;
+      .bonoVivienda-informacion-contenido {
+        margin-bottom: 2.5em;
+        .pregunta {
+          font-size: 1.5em;
+        }
+        .respuesta {
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .bonosVivienda {
+    .homepage-title {
+      margin-top: 3em;
+      font-size: 4em !important;
+      .homepage-titleSpan {
+        font-size: 1em !important;
+      }
+    }
+    .bonosVivienda-informacion {
+      width: 50%;
+      .bonoVivienda-informacion-contenido {
+        margin-bottom: 3em;
+        .pregunta {
+          font-size: 1.7em;
+        }
+        .respuesta {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+}
