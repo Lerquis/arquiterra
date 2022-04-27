@@ -18,20 +18,20 @@ if (window.innerWidth > 1200) {
     });
 
     tl.from(document.querySelector(".landing-sloganFondo-desktop"), {
-      duration: 1.5,
+      duration: 1,
       x: -1000,
     });
 
     tl.from(document.querySelector(".landingPage-slider-desktop"), {
-      duration: 1.5,
-      x: -1000,
+      duration: 1,
+      x: -2000,
     });
 
     tl.from(
       document.querySelector(".desktop"),
       {
         duration: 1.5,
-        x: 1000,
+        x: 2000,
       },
       // ?Es para que la animacion salga al mismo tiempo que la animacion
       // ?pasada

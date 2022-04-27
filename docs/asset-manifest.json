@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/arquiterra/static/css/main.7dfd51df.css",
-    "main.js": "/arquiterra/static/js/main.042fb5cc.js",
+    "main.css": "/arquiterra/static/css/main.ab8c6189.css",
+    "main.js": "/arquiterra/static/js/main.5b4af0a3.js",
     "static/media/contract.jpg": "/arquiterra/static/media/contract.26e54c30b53d5eba8955.jpg",
     "index.html": "/arquiterra/index.html",
-    "main.7dfd51df.css.map": "/arquiterra/static/css/main.7dfd51df.css.map",
-    "main.042fb5cc.js.map": "/arquiterra/static/js/main.042fb5cc.js.map"
+    "main.ab8c6189.css.map": "/arquiterra/static/css/main.ab8c6189.css.map",
+    "main.5b4af0a3.js.map": "/arquiterra/static/js/main.5b4af0a3.js.map"
   },
   "entrypoints": [
-    "static/css/main.7dfd51df.css",
-    "static/js/main.042fb5cc.js"
+    "static/css/main.ab8c6189.css",
+    "static/js/main.5b4af0a3.js"
   ]
 }
