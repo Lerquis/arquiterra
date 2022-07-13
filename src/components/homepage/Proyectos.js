@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Proyecto } from "./Proyecto";
+import { fetchFun } from "../../helper/fetch";
 
 export const Proyectos = () => {
+  const [proyectos, setProyectos] = useState([]);
+  const seleccionarProyectos = async () => {
+    const data = await fetchFun("proyecto/proyectos");
+    const response = await data.json();
+
+    const proyectosDB = response.data;
+
+    for (let i = 0; i < 3; i++) {
+      if (proyectosDB[i]) {
+        setProyectos((prevArray) => [...prevArray, proyectosDB[i]]);
+      }
+    }
+  };
+  useEffect(() => {}, [proyectos]);
+
+  useEffect(() => {
+    seleccionarProyectos();
+  }, []);
   return (
     <div className="proyectosHP">
       <h2
@@ -12,12 +31,9 @@ export const Proyectos = () => {
       >
         Nuestros <span className="homepage-titleSpan">Proyectos</span>
       </h2>
-
-      <Proyecto />
-
-      <Proyecto />
-
-      <Proyecto />
+      {proyectos.map((proyecto) => {
+        return <Proyecto proyecto={proyecto} key={proyecto._id} />;
+      })}
 
       <Link to={"/projects"} className="noBorder">
         <button type="button" className="boton-rojo">

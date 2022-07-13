@@ -59,6 +59,16 @@
     .footer-logo {
       width: 5em;
     }
+    .footer-content {
+      .footer-contentParrafo {
+        font-size: 1.2em;
+      }
+    }
+  }
+  .marginSide {
+    .footer-contentParrafo {
+      font-size: 1.2em;
+    }
   }
 }
 
@@ -67,8 +77,8 @@
     margin: 0 10em;
     .footer-info {
       margin: 0 2em;
-      font-size: 1.2rem;
       text-align: left;
+      font-size: 1.1em;
       flex-direction: row;
       .footer-contentFila,
       form {
@@ -94,6 +104,7 @@
       }
       .footer-content {
         .footer-contentTelefonos {
+          font-size: 1.2em;
           text-align: center;
           margin-bottom: 5em;
         }

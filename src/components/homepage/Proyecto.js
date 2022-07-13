@@ -1,35 +1,42 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const Proyecto = () => {
+export const Proyecto = ({ proyecto }) => {
   // TODO: Cambiar las url de las imagenes
   return (
     <div className="proyectoHP">
       <div
-        className="proyectoHP-background animate__animated notSeen"
+        className="proyectoHP-background animate__animated"
         data-animacion="fadeIn"
         data-porcentaje="mitad"
         style={{
-          background: `url(${process.env.PUBLIC_URL}/assets/casaSanGerardo.jpg)`,
+          background: `url(${proyecto.images[0].url})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
       ></div>
 
       <div
-        className="proyectoHP-contenido marginSide notSeen animate__animated"
+        className="proyectoHP-contenido marginSide animate__animated"
         data-animacion="fadeIndown"
       >
         <h3 className="contentTitle">
-          Proyecto en <span>Guanacaste</span>
+          <span>{proyecto?.nombre.slice(0, 9)}</span>
+          {proyecto.nombre.slice(9)}
         </h3>
 
         <p className="proyectoHP-contenidoParrafo">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, quae.
+          {proyecto.descripcion.length >= 30
+            ? proyecto.descripcion.slice(0, 100) + "..."
+            : proyecto.descripcion}
         </p>
 
-        <Link to="/project/aserri" className="noBorder">
-          <button type="button" className="boton-rojo">
+        <Link to={`/project/${proyecto._id}`} className="noBorder">
+          <button
+            type="button"
+            className="boton-rojo"
+            style={{ fontSize: "1em" }}
+          >
             Ver mas
           </button>
         </Link>

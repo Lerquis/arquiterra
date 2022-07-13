@@ -9,6 +9,7 @@ if (window.innerWidth > 1200) {
     // ?la otra
     let tl = gsap.timeline({
       repeat: 0,
+      delay: 1,
     });
     lineas.forEach((linea) => {
       tl.from(document.querySelector(`.${linea.className}`), {
@@ -19,30 +20,34 @@ if (window.innerWidth > 1200) {
 
     tl.from(document.querySelector(".landing-sloganFondo-desktop"), {
       duration: 1,
-      x: -1000,
-    });
-
-    tl.from(document.querySelector(".landingPage-slider-desktop"), {
-      duration: 1,
       x: -2000,
     });
+
+    tl.from(
+      document.querySelector(".landingPage-slider-desktop"),
+      {
+        duration: 1,
+        x: -2000,
+      },
+      "-=1"
+    );
 
     tl.from(
       document.querySelector(".desktop"),
       {
         duration: 1.5,
-        x: 2000,
+        opacity: 0,
       },
       // ?Es para que la animacion salga al mismo tiempo que la animacion
       // ?pasada
-      "-=1.5"
+      "-=0.5"
     );
 
     tl.from(
       document.querySelector(".arrows"),
       {
         duration: 1.5,
-        x: 1000,
+        opacity: 0,
       },
       "-=1.5"
     );

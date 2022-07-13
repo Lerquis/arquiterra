@@ -1,6 +1,8 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { animacionesParallax } from "../../animations/parallax";
 
-export const ProjectsLanding = () => {
+export const ProjectsLanding = ({ project }) => {
   const [width, setWidth] = useState(window.innerWidth);
   const [dataRate, setDataRate] = useState("");
 
@@ -9,7 +11,6 @@ export const ProjectsLanding = () => {
   });
 
   useLayoutEffect(() => {
-    let dataRate;
     if (width > 1000) {
       setDataRate(".2");
     } else {
@@ -17,13 +18,15 @@ export const ProjectsLanding = () => {
     }
   }, [width]);
 
+  useEffect(() => {
+    animacionesParallax();
+  }, [project]);
+
   return (
     <div className="projectsLandingPage">
       <h2
-        className="parallax animate__animated "
+        className="parallax animate__animated animate__fadeIn"
         data-rate=".4"
-        data-porcentaje="mitad"
-        data-animacion="fadeIn"
         data-direction="vertical"
       >
         Nuestros <span className="projects-titleSpan">Proyectos</span>
@@ -34,32 +37,40 @@ export const ProjectsLanding = () => {
         data-rate={dataRate}
         data-direction="vertical"
       >
-        <img
+        {/* <img
           src={`${process.env.PUBLIC_URL}/assets/casaFlorencia.jpg`}
           className="animate__animated"
           data-porcentaje="mitad"
           data-animacion="fadeInLeft"
-        />
-        <div
-          data-porcentaje="mitad"
-          data-animacion="fadeIn"
-          className="projectsLandingPage-lastProject-content animate__animated "
-        >
-          <svg viewBox="0 0 39 34" fill="none">
-            <path d="M19.5 0L38.9856 33.75H0.0144291L19.5 0Z" fill="white" />
-          </svg>
+        /> */}
 
-          <h4>Ultimo Proyecto</h4>
-          <h3>
-            Proyecto <span>Sabana</span>
-          </h3>
-          <p className="marginSide ">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi,
-            facilisis sollicitudin sit egestas amet pellentesque id. Sit aliquam
-            neque velit netus. Nec, eget vel feugiat in phasellus. Non in
-            rhoncus, in faucibus risus eget ut.
-          </p>
-        </div>
+        {project && (
+          <>
+            <Link to={`/project/${project._id}`}>
+              <img
+                className="animate__animated animate__fadeInLeft animate__slow"
+                src={project.images[0].url}
+                alt="Imagen Proyecto"
+              />
+            </Link>
+            <div className="projectsLandingPage-lastProject-content animate__animated animate__fadeIn animate__slower">
+              <svg viewBox="0 0 39 34" fill="none">
+                <path
+                  d="M19.5 0L38.9856 33.75H0.0144291L19.5 0Z"
+                  fill="white"
+                />
+              </svg>
+              <h4>Ultimo Proyecto</h4>
+              <h3>
+                <span style={{ marginRight: "10px" }}>
+                  {project?.nombre.slice(0, 8)}
+                </span>
+                {project.nombre.slice(9)}
+              </h3>
+              <p className="marginSide ">{project.descripcion}</p>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

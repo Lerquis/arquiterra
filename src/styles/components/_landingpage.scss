@@ -1,10 +1,27 @@
 .landingPage {
   margin-bottom: 20vh;
+  position: relative;
+}
+
+.imagenLogoLanding {
+  position: absolute;
+  z-index: 2;
+  filter: brightness(0) invert(1);
+  height: 20%;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .landing-backgroundImage {
+  // width: 100vw;
+  // object-fit: cover;
+  // height: 30vh;
+  // filter: brightness(0.8);
+  height: 100vh;
   width: 100vw;
-  filter: brightness(0.8);
+  object-fit: cover;
+  filter: brightness(0.4);
 }
 
 .landingPage-slider {
@@ -19,89 +36,117 @@
 }
 
 .slide {
-  opacity: 0;
-  transform: scale(1);
+  opacity: 0.8;
 }
 
 .slide.active {
   opacity: 1;
   transition: all 3s ease;
-  transform: scale(1.08);
 }
 
 .landing-slogan {
-  //color: #fff;
-  font-size: 0.8rem;
-  margin-top: 2em;
-  overflow-x: hidden;
+  // //color: #fff;
+  // font-size: 0.8rem;
+  // margin-top: 2em;
+  // overflow-x: hidden;
 
-  .landing-sloganFondo {
-    background-color: $primary;
-    position: absolute;
-    z-index: -1;
-    height: 12em;
-    width: 50%;
-    // ?Para dejar el cuadrado en su mismo lugar
-    margin-top: -1.5em;
+  position: absolute;
+  bottom: 35%;
+  z-index: 1;
+  width: 100%;
+}
+path {
+  fill: #fff;
+}
+.landing-sloganFondo {
+  // background-color: $primary;
+  // position: absolute;
+  // z-index: -1;
+  // height: 14em;
+  // width: 50%;
+  // // ?Para dejar el cuadrado en su mismo lugar
+  // margin-top: -2.5em;
+  display: none;
+}
+.landing-sloganFondo-desktop {
+  display: none;
+  background-color: $primary;
+  position: absolute;
+  z-index: -1;
+  width: 50%;
+  margin-top: -1.5em;
+}
+.mobile {
+  // //margin-top: 1.5em;
+  // // ?Para centrar el texto de manera igual que figma
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // gap: 0.3em;
+  // .izq {
+  //   text-align: right;
+  //   color: #fff;
+  // }
+  // .der {
+  //   color: $primary;
+  // }
+  display: none;
+}
+.desktop {
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  text-align: center;
+  font-size: 2em;
+}
+
+.arrows {
+  transform: translateY(300%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5em;
+  // width: 9.6em;
+  // display: flex;
+  // justify-content: space-between;
+  margin: 1em auto 0;
+  text-align: end;
+  .btnArrowDer {
+    text-align: start;
   }
-  .landing-sloganFondo-desktop {
-    display: none;
-    background-color: $primary;
-    position: absolute;
-    z-index: -1;
-    height: 12em;
-    width: 50%;
-    margin-top: -1.5em;
+  svg {
+    width: 4em;
   }
-  .mobile {
-    //margin-top: 1.5em;
-    // ?Para centrar el texto de manera igual que figma
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.3em;
-    .izq {
-      text-align: right;
-      color: #fff;
-    }
-    .der {
-      color: $primary;
-    }
+}
+
+.arrowButton {
+  padding: 1em;
+
+  &:hover {
+    cursor: default;
   }
+}
+.derArrow,
+.izqArrow {
+  transition: all 0.3s ease;
+}
+.derArrow:hover,
+.izqArrow:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .imagenLogoLanding {
+    height: 30%;
+    top: 35%;
+  }
+
   .desktop {
-    display: none;
+    font-size: 3em;
+    transform: translateY(90%) !important;
   }
-
   .arrows {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    // width: 9.6em;
-    // display: flex;
-    // justify-content: space-between;
-    margin: 1em auto 0;
-    text-align: end;
-    .btnArrowDer {
-      text-align: start;
-    }
-    svg {
-      width: 4em;
-    }
-  }
-
-  .arrowButton {
-    padding: 1em;
-
-    &:hover {
-      cursor: default;
-    }
-  }
-  .derArrow,
-  .izqArrow {
-    transition: all 0.3s ease;
-  }
-  .derArrow:hover,
-  .izqArrow:hover {
-    transform: scale(1.1);
-    cursor: pointer;
+    transform: translateY(400%) !important;
+    gap: 10em;
   }
 }
 
@@ -109,26 +154,29 @@
   .landingPage {
     height: 100vh;
     width: 100%;
-    position: relative;
-    // display: grid;
-    // grid-template-columns: 60% 40%;
     display: flex;
-
     align-items: flex-start;
     transform: translateY(20%);
   }
 
   .landingPage-slider-desktop {
-    position: static;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    transform: translate(0%);
-    margin-left: 20%;
-    width: 40em;
+    margin-left: 10vw;
+    width: 50em;
+    height: 50em;
     max-height: 55%;
     margin-right: 2em;
+    z-index: 3;
+  }
+
+  .landing-slogan {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
   }
 
   .landingPage-slider {
@@ -136,8 +184,8 @@
   }
   .landing-backgroundImage {
     object-fit: cover;
-    width: auto;
-    height: auto;
+    width: 600px;
+    height: 600px;
   }
 
   .landing-slogan {
@@ -145,40 +193,45 @@
     flex-direction: column;
     align-items: center;
     height: 100%;
-    .landing-sloganFondo {
-      display: none;
-    }
-    .landing-sloganFondo-desktop {
-      display: block;
-      position: absolute;
-      transform: translateY(-21%);
-      z-index: -1;
-      left: 0;
-      height: 101%;
-      width: 50%;
-    }
+  }
+  .landing-sloganFondo {
+    display: none;
+  }
+  .landing-sloganFondo-desktop {
+    display: block;
+    position: absolute;
+    transform: translateY(-18%);
+    z-index: -1;
+    left: 0;
+    height: 101vh;
+    width: 50%;
+  }
 
-    .arrows {
-      gap: 10em;
-      .btnArrowIzq {
-        path {
-          fill: $primary;
-        }
-      }
-    }
-    .mobile {
-      display: none;
-    }
-    .desktop {
-      line-height: 2.2em;
-      height: 7.5em;
-      margin-top: 1em;
-      font-size: 3.5em;
-      display: block;
-      color: $primary;
-    }
+  .arrows {
+    gap: 10em;
+    transform: translateX(0) !important;
+  }
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    line-height: 2.2em;
+    height: 7.5em;
+    display: block;
+    color: $primary;
+    transform: translateY(0) !important;
+    text-align: left;
+  }
+  path {
+    fill: $primary;
   }
   .slide {
     opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .landingPage-slider-desktop {
+    margin-left: 20vw;
   }
 }

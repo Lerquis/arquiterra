@@ -42,7 +42,8 @@ button {
 }
 
 .notSeen {
-  opacity: 0;
+  transition: opacity 0.3s ease;
+  opacity: 0 !important;
 }
 
 .noBorder {
@@ -59,6 +60,7 @@ button {
 }
 
 .homepage-title {
+  transition: transform 0.1s;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -124,6 +126,33 @@ button {
     }
   }
 }
+.error {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  background-color: rgba($color: red, $alpha: 0.7);
+  width: 100%;
+  text-transform: uppercase;
+  padding: 1em;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.exito {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  background-color: rgba($color: green, $alpha: 0.7);
+  width: 100%;
+  text-transform: uppercase;
+  padding: 1em;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2em;
+}
 
 @media only screen and (min-width: 1200px) {
   .homepage-title {
@@ -133,5 +162,12 @@ button {
     .homepage-titleSpan {
       all: unset;
     }
+  }
+  .mb-5 {
+    margin-bottom: 0.1em;
+    font-size: 8em;
+  }
+  .boton-rojo {
+    font-size: 1.2em;
   }
 }

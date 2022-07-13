@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-export const Topbar = ({ url = "./", contact = "" }) => {
+export const Topbar = ({ show = true, contact }) => {
   const observerFooter = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -9,7 +9,9 @@ export const Topbar = ({ url = "./", contact = "" }) => {
         if (entry.isIntersecting) {
           topbar.classList.remove("show");
         } else {
-          topbar.classList.add("show");
+          if (window.scrollY != 0) {
+            topbar.classList.add("show");
+          }
         }
       });
     },
@@ -17,11 +19,19 @@ export const Topbar = ({ url = "./", contact = "" }) => {
   );
 
   document.addEventListener("DOMContentLoaded", () => {
+    if (!show) {
+      const landingPage = document.querySelector(".notShowTopbar");
+      observerFooter.observe(landingPage);
+    }
     const footer = document.querySelector(".footer");
     observerFooter.observe(footer);
   });
 
   document.addEventListener("scroll", () => {
+    if (!show) {
+      const landingPage = document.querySelector(".notShowTopbar");
+      observerFooter.observe(landingPage);
+    }
     const footer = document.querySelector(".footer");
     observerFooter.observe(footer);
   });
@@ -29,10 +39,13 @@ export const Topbar = ({ url = "./", contact = "" }) => {
   return (
     <>
       <div className="topbar">
-        <div className="topbar-fixed show">
+        <div className={show ? "topbar-fixed show" : "topbar-fixed"}>
           <Link to="/" className="noBorder">
             <div className="logo">
-              <img src={`${process.env.PUBLIC_URL}/assets/Logo.svg`} />
+              <img
+                src={`${process.env.PUBLIC_URL}/assets/Logo.svg`}
+                alt="Logo"
+              />
             </div>
           </Link>
           {contact !== "true" && (

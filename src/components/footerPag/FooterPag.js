@@ -25,7 +25,7 @@ export const FooterPag = ({ url = "./" }) => {
 
   return (
     <div
-      className="footer animate__animated notSeen topbarObserver"
+      className="footer animacion animate__animated notSeen topbarObserver"
       data-animacion="fadeInDown"
       data-porcentaje="mitad"
     >
@@ -141,7 +141,11 @@ export const FooterPag = ({ url = "./" }) => {
               onChange={handleInputChange}
             />
           </div>
-          <button type="submit" className="boton-rojo">
+          <button
+            type="submit"
+            className="boton-rojo"
+            style={{ fontSize: "1em" }}
+          >
             Enviar
           </button>
         </form>

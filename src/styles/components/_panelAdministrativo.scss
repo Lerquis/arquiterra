@@ -1,0 +1,112 @@
+.panelAdministrativo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .topbar-administracion {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3em;
+    button {
+      width: 10em;
+      margin: 0.5em 0;
+    }
+    h1 {
+      margin: 1em 0 0.2em 0;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      font-size: 2.5em;
+      span {
+        font-size: 0.5em;
+      }
+    }
+  }
+}
+
+.tablaProyectos {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 2em;
+  .proyectoDatos {
+    display: flex;
+    margin: 1em 0.5em;
+    align-items: center;
+    img {
+      margin-right: 1em;
+    }
+    .proyectoDatos-texto {
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+  .accionesProyecto {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    button {
+      margin: 0 1em;
+    }
+  }
+}
+
+.tablaImagenes {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .tablaImagenes-datos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+  }
+  .tablaImagenes-texto {
+    margin-bottom: 0.5em;
+  }
+
+  .tablaImagenes-check {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.tablaImagenes-datos:nth-child(even) {
+  background-color: rgba($color: $primary, $alpha: 0.1);
+}
+.tablaImagenes-datos:nth-child(odd) {
+  background-color: rgba($color: $primary, $alpha: 0.2);
+}
+@media only screen and (min-width: 600px) {
+  .proyectoInformacionAcciones {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+  }
+  .tablaImagenes {
+    .tablaImagenes-datos {
+      display: grid;
+      grid-template-columns: 6fr 1fr;
+    }
+    .tablaImagenes-texto {
+      align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      justify-content: space-evenly;
+    }
+  }
+}
+
+.proyectoInformacionAcciones:nth-child(odd) {
+  background-color: rgba($color: $primary, $alpha: 0.2);
+}
+.proyectoInformacionAcciones:nth-child(even) {
+  background-color: rgba($color: $primary, $alpha: 0.1);
+}

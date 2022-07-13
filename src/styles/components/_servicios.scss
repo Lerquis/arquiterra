@@ -54,8 +54,23 @@
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .servicios-container {
+    margin: 0 auto;
+    width: 80%;
+  }
+  .servicio-bonoViviendaContenido {
+    width: 80%;
+    font-size: 1.2em;
+    button {
+      font-size: 0.8em;
+    }
+  }
+}
+
 @media only screen and(min-width:1100px) {
   .servicios-container {
+    width: 100%;
     display: grid;
     grid-template-rows: 1fr 1fr;
     .servicios-containerFila:nth-child(1) {

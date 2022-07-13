@@ -2,9 +2,14 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { imgsSlider } from "../../helper/imgUrls";
 
-export const ProjectInfo = () => {
+export const ProjectInfo = ({ descripcion, imgs }) => {
   // ?Indices de la lista de imagenes
   const [index, setIndex] = useState(0);
+  const [loadingImages, setLoadingImages] = useState(false);
+
+  if (imgs != null && !loadingImages) {
+    setLoadingImages(true);
+  }
 
   const lastIndex = imgsSlider.length - 1;
 
@@ -31,35 +36,46 @@ export const ProjectInfo = () => {
   }, [index]);
   return (
     <div
-      className="projectInfo animate__animated notSeen"
+      className="projectInfo animate__animated"
       data-porcentaje="mitad"
       data-animacion="fadeIn"
     >
-      <p className="marginSide">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices
-        vulputate massa interdum diam congue. Varius enim, gravida mauris sed.
-        Sit ullamcorper eleifend habitasse aliquam nisl. Neque sed ultrices
-        lacus dignissim.
-      </p>
-
-      <section className="projectInfo-slider">
-        {imgsSlider.map((img, indx) => {
-          return (
-            <div
-              className={
-                indx === index ? "slideProject activeProject" : "slideProject"
-              }
-              key={indx}
-            >
-              {indx === index && (
-                <img
-                  className="projectInfo-backgroundImage"
-                  src={`${process.env.PUBLIC_URL}/assets/${img}.jpg`}
-                />
-              )}
-            </div>
-          );
-        })}
+      <h2
+        className="homepage-title mb-5 animate__animated parallax"
+        data-rate=".2"
+        data-direction="vertical"
+      >
+        Acerca el <span className="homepage-titleSpan ">proyecto</span>
+      </h2>
+      <p className="marginSide">{descripcion}</p>
+      <div className="galeria">
+        <h2
+          className="homepage-title mb-5 animate__animated parallax"
+          data-rate=".2"
+          data-direction="vertical"
+        >
+          <span className="homepage-titleSpan ">Galeria</span>
+        </h2>
+        <section className="projectInfo-slider">
+          {imgs.map((img, indx) => {
+            return (
+              <div
+                className={
+                  indx === index ? "slideProject activeProject" : "slideProject"
+                }
+                key={indx}
+              >
+                {indx === index && (
+                  <img
+                    className="projectInfo-backgroundImage"
+                    // src={`${process.env.PUBLIC_URL}/assets/${img}.jpg`}
+                    src={img.url}
+                  />
+                )}
+              </div>
+            );
+          })}
+        </section>
         <div className="projectArrows">
           <button type="button">
             <svg
@@ -91,7 +107,7 @@ export const ProjectInfo = () => {
             </svg>
           </button>
         </div>
-      </section>
+      </div>
     </div>
   );
 };

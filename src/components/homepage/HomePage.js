@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FooterPag } from "../footerPag/FooterPag";
 import { Topbar } from "../topbar/Topbar";
 import { LandingPage } from "./LandingPage";
@@ -18,7 +18,7 @@ export const HomePage = () => {
         <div className="linea4" id="linea"></div>
         <div className="linea5" id="linea"></div>
       </div>
-      <Topbar />
+      <Topbar show={false} />
       <LandingPage />
       <NuestrosServicios />
       <Nosotros />

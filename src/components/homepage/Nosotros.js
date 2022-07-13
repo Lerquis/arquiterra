@@ -10,14 +10,10 @@ export const Nosotros = () => {
       >
         Sobre <span className="homepage-titleSpan">Nosotros</span>
       </h2>
-      <div
-        className="sobreNosotros-bloque animate__animated notSeen"
-        data-porcentaje="mitad"
-        data-animacion="fadeIn"
-      >
+      <div className="sobreNosotros-bloque">
         <div className="sobreNosotros-imagen">
           <p>Arquitecto Luis Rojas Salazar</p>
-          <img src="/arquiterra/assets/profile.jpg" />
+          <img src="/arquiterra/assets/profile.jpg" alt="Imagen Luis Rojas" />
         </div>
 
         <div

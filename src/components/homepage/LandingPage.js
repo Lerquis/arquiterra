@@ -1,10 +1,22 @@
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import { useState, useEffect } from "react";
 import { imgsSlider } from "../../helper/imgUrls";
+import { fetchFun } from "../../helper/fetch";
 
 export const LandingPage = () => {
   // ?Indices de la lista de imagenes
   const [index, setIndex] = useState(0);
+  const [images, setImages] = useState([]);
+
+  const setearImagenes = async () => {
+    const data = await fetchFun("proyecto/proyectos");
+    const response = await data.json();
+
+    const proyectos = response.data;
+    for (let i = 0; i < proyectos.length; i++) {
+      setImages((prevArray) => [...prevArray, proyectos[i].images[0].url]);
+    }
+  };
 
   const lastIndex = imgsSlider.length - 1;
 
@@ -30,6 +42,10 @@ export const LandingPage = () => {
     return () => clearInterval(slider);
   }, [index]);
 
+  useEffect(() => {
+    setearImagenes();
+  }, []);
+
   //! IMPORTANTE
   // ?Como la pagina esta subida en gh pages, no funciona poner
   // ?de src='./assets/${img}.jpg' porque la direccion esta mal
@@ -38,9 +54,13 @@ export const LandingPage = () => {
   // !IMPORTANTE
 
   return (
-    <div className="landingPage landingObserver">
+    <div className="landingPage landingObserver notShowTopbar">
+      <img
+        className="imagenLogoLanding"
+        src={`${process.env.PUBLIC_URL}/assets/Logo.svg`}
+      />
       <section className="landingPage-slider">
-        {imgsSlider.map((img, indx) => {
+        {images.map((img, indx) => {
           return (
             <div
               className={indx === index ? "slide active" : "slide"}
@@ -49,7 +69,9 @@ export const LandingPage = () => {
               {indx === index && (
                 <img
                   className="landing-backgroundImage"
-                  src={`${process.env.PUBLIC_URL}/assets/${img}.jpg`}
+                  // src={`${process.env.PUBLIC_URL}/assets/${img}.jpg`}
+                  src={img}
+                  alt="Imagenes Proyectos"
                 />
               )}
             </div>
@@ -58,7 +80,7 @@ export const LandingPage = () => {
       </section>
 
       <section className="landingPage-slider-desktop">
-        {imgsSlider.map((img, indx) => {
+        {images.map((img, indx) => {
           return (
             <div
               className={indx === index ? "slide active" : "slide"}
@@ -67,7 +89,9 @@ export const LandingPage = () => {
               {indx === index && (
                 <img
                   className="landing-backgroundImage"
-                  src={`${process.env.PUBLIC_URL}/assets/${img}.jpg`}
+                  // src={`${process.env.PUBLIC_URL}/assets/${img}.jpg`}
+                  src={img}
+                  alt="Imagenes Proyectos"
                 />
               )}
             </div>
@@ -101,7 +125,6 @@ export const LandingPage = () => {
             <svg
               className="izqArrow"
               viewBox="0 0 36 12"
-              fill="none"
               onClick={() => {
                 setIndex(index - 1);
               }}

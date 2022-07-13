@@ -1,6 +1,7 @@
 .projectsLandingPage {
   max-width: 100vw;
   h2 {
+    transition: transform 0.1s;
     margin-top: 1em;
     text-align: center;
     font-size: 2.5em;
@@ -14,10 +15,11 @@
     }
   }
   .projectsLandingPage-lastProject {
-    margin-bottom: 5em;
+    margin-bottom: 10em;
     img {
       width: 100%;
-      height: auto;
+      height: 100vh;
+      object-fit: cover;
     }
     .projectsLandingPage-lastProject-content {
       text-align: center;
@@ -75,17 +77,18 @@
 @media only screen and (min-width: 1000px) {
   .projectsLandingPage {
     h2 {
-      margin-top: 4em;
-      margin-left: 2.5em;
+      margin-top: 2.5em;
+      margin-left: 1.5em;
       flex-direction: row;
-      font-size: 4em;
+      font-size: 6em;
       span {
         all: unset;
         margin-left: 0.3em;
       }
     }
     .projectsLandingPage-lastProject {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       margin-bottom: 10em;
       img {
         object-fit: cover;
