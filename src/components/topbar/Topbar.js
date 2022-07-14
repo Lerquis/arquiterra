@@ -16,7 +16,7 @@ export const Topbar = ({ show = true, contact }) => {
         }
       });
     },
-    { threshold: 0.5 }
+    { threshold: 0.6 }
   );
 
   window.addEventListener("load", () => {

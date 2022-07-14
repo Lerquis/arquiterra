@@ -23,8 +23,12 @@
       color: #fff;
 
       h2 {
+        margin-top: 2em;
+        display: flex;
+        flex-wrap: wrap;
         font-size: 3em;
         font-style: italic;
+        justify-content: center;
         span {
           color: $secondary;
         }
@@ -45,7 +49,15 @@
   }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 768px) {
+  .projectLanding-basicInfo-content {
+    h2 {
+      margin-top: 0 !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
   .projectLanding {
     .projectLanding-basicInfo {
       img {
@@ -60,7 +72,6 @@
         height: 50vh;
 
         h2 {
-          margin: 0;
           font-size: 5em;
         }
         .projectLanding-basicInfo-content-feature {
