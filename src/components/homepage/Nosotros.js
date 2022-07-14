@@ -13,7 +13,10 @@ export const Nosotros = () => {
       <div className="sobreNosotros-bloque">
         <div className="sobreNosotros-imagen">
           <p>Arquitecto Luis Rojas Salazar</p>
-          <img src="/arquiterra/assets/profile.jpg" alt="Imagen Luis Rojas" />
+          <img
+            src="/arquiterra/assets/casaFlorencia.jpg"
+            alt="Imagen Luis Rojas"
+          />
         </div>
 
         <div

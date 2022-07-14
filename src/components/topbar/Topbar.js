@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export const Topbar = ({ show = true, contact }) => {
+  const [location, setLocation] = useState("");
   const observerFooter = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -18,23 +19,23 @@ export const Topbar = ({ show = true, contact }) => {
     { threshold: 0.5 }
   );
 
-  document.addEventListener("DOMContentLoaded", () => {
-    if (!show) {
-      const landingPage = document.querySelector(".notShowTopbar");
-      observerFooter.observe(landingPage);
-    }
+  window.addEventListener("load", () => {
     const footer = document.querySelector(".footer");
     observerFooter.observe(footer);
   });
 
   document.addEventListener("scroll", () => {
-    if (!show) {
-      const landingPage = document.querySelector(".notShowTopbar");
-      observerFooter.observe(landingPage);
-    }
     const footer = document.querySelector(".footer");
     observerFooter.observe(footer);
   });
+
+  useEffect(() => {
+    setLocation(window.location.pathname);
+    setTimeout(() => {
+      const topbar = document.querySelector(".topbar-fixed");
+      topbar.classList.add("show");
+    }, 3500);
+  }, [location]);
 
   return (
     <>
