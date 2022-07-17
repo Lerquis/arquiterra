@@ -68,7 +68,9 @@
 
   .topbar-fixed {
     padding: 4em 10em;
-    background-color: rgba($color: #fff, $alpha: 0);
+    max-width: 1920px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .logo {
     img {

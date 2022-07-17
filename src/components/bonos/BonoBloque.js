@@ -7,8 +7,15 @@ export const BonoBloque = ({ pregunta, respuesta }) => {
       data-porcentaje="mitad"
       data-animacion="fadeIn"
     >
-      <p className="pregunta">{pregunta}</p>
-      <p className="respuesta">{respuesta}</p>
+      <div className="question-header">
+        <div className="title">
+          <h3 className="pregunta">{pregunta}</h3>
+          <span className="plus-sign"></span>
+        </div>
+        <div className="answer-to-questions">
+          <p className="respuesta">{respuesta}</p>
+        </div>
+      </div>
     </div>
   );
 };

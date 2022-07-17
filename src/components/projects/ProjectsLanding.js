@@ -37,13 +37,6 @@ export const ProjectsLanding = ({ project }) => {
         data-rate={dataRate}
         data-direction="vertical"
       >
-        {/* <img
-          src={`${process.env.PUBLIC_URL}/assets/casaFlorencia.jpg`}
-          className="animate__animated"
-          data-porcentaje="mitad"
-          data-animacion="fadeInLeft"
-        /> */}
-
         {project && (
           <>
             <Link to={`/project/${project._id}`}>

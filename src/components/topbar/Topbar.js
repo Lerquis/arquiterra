@@ -8,7 +8,11 @@ export const Topbar = ({ show = true, contact }) => {
       entries.forEach((entry) => {
         const topbar = document.querySelector(".topbar-fixed");
         if (entry.isIntersecting) {
-          topbar.classList.remove("show");
+          if (window.scrollY === 0) {
+            topbar.classList.add("show");
+          } else {
+            topbar.classList.remove("show");
+          }
         } else {
           if (window.scrollY != 0) {
             topbar.classList.add("show");
@@ -34,6 +38,8 @@ export const Topbar = ({ show = true, contact }) => {
     setTimeout(() => {
       const topbar = document.querySelector(".topbar-fixed");
       topbar.classList.add("show");
+      const lineas = document.querySelector(".lineas");
+      if (lineas) lineas.style.zIndex = -10;
     }, 3500);
   }, [location]);
 

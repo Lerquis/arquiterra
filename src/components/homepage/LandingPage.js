@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { imgsSlider } from "../../helper/imgUrls";
 import { fetchFun } from "../../helper/fetch";
 
 export const LandingPage = () => {
@@ -18,7 +17,7 @@ export const LandingPage = () => {
     }
   };
 
-  const lastIndex = imgsSlider.length - 1;
+  const lastIndex = images.length - 1;
 
   // ?Para saber si se tiene que devolver a la ultima imagen o
   // ?a la primera
@@ -69,7 +68,6 @@ export const LandingPage = () => {
               {indx === index && (
                 <img
                   className="landing-backgroundImage"
-                  // src={`${process.env.PUBLIC_URL}/assets/${img}.jpg`}
                   src={img}
                   alt="Imagenes Proyectos"
                 />
@@ -89,7 +87,6 @@ export const LandingPage = () => {
               {indx === index && (
                 <img
                   className="landing-backgroundImage"
-                  // src={`${process.env.PUBLIC_URL}/assets/${img}.jpg`}
                   src={img}
                   alt="Imagenes Proyectos"
                 />

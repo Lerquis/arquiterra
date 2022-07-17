@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { imgsSlider } from "../../helper/imgUrls";
 
 export const ProjectInfo = ({ descripcion, imgs }) => {
   // ?Indices de la lista de imagenes
@@ -11,7 +10,7 @@ export const ProjectInfo = ({ descripcion, imgs }) => {
     setLoadingImages(true);
   }
 
-  const lastIndex = imgsSlider.length - 1;
+  const lastIndex = imgs.length - 1;
 
   // ?Para saber si se tiene que devolver a la ultima imagen o
   // ?a la primera

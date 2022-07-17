@@ -5,6 +5,18 @@
   padding: 0;
 }
 
+body {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+html {
+  max-width: 1920px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+}
+
 // *            GOBLAL CONFIGS          * //
 
 .lineas {
@@ -13,18 +25,17 @@
 
 @media only screen and (min-width: 1200px) {
   .lineas {
-    background-color: #2a2932;
     display: block;
     position: fixed;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    div {
-      background-color: #fff;
-      border-left: 0.5px solid rgba($color: #2a2932, $alpha: 0.1);
-    }
+    // div {
+    //   background-color: #fff;
+    //   border-left: 0.5px solid rgba($color: #2a2932, $alpha: 0.1);
+    // }
   }
 }
 
@@ -158,7 +169,7 @@ button {
   .homepage-title {
     display: block;
     width: 100%;
-    font-size: 10vw;
+    font-size: max(8rem);
     .homepage-titleSpan {
       all: unset;
     }

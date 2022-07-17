@@ -1,5 +1,5 @@
 .landingPage {
-  margin-bottom: 20vh;
+  margin-bottom: 15em;
   position: relative;
 }
 
@@ -109,6 +109,7 @@
   .imagenLogoLanding {
     height: 30%;
     top: 35%;
+    z-index: 2;
   }
 
   .desktop {
@@ -122,100 +123,108 @@
 }
 
 @media only screen and (min-width: 1200px) {
-  .landingPage {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    transform: translateY(20%);
-  }
-
-  .landingPage-slider-desktop {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 10vw;
-    width: 50em;
-    height: 50em;
-    max-height: 55%;
-    margin-right: 2em;
-    z-index: 3;
-  }
-
-  .landing-slogan {
-    position: static;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    path {
-      fill: $primary;
-    }
-  }
-
-  .landingPage-slider {
-    display: none;
-  }
-  .landing-backgroundImage {
-    object-fit: cover;
-    width: 600px;
-    height: 600px;
-  }
-
-  .landing-slogan {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-  }
-  .landing-sloganFondo {
-    display: none;
-  }
-  .landing-sloganFondo-desktop {
-    display: block;
-    position: absolute;
-    transform: translateY(-18%);
-    z-index: -1;
-    left: 0;
-    height: 101vh;
-    width: 50%;
-  }
-
-  .arrows {
-    gap: 10em;
-    transform: translateX(0) !important;
-  }
-  .mobile {
-    display: none;
-  }
   .desktop {
-    line-height: 1.8em;
-    height: 7.5em;
-    display: block;
-    color: $primary;
-    transform: translateY(0) !important;
-    text-align: left;
+    font-size: 3em;
   }
+  //   .landingPage {
+  //     height: 100vh;
+  //     width: 100%;
+  //     display: flex;
+  //     align-items: flex-start;
+  //     transform: translateY(20%);
+  //   }
 
-  .slide {
-    opacity: 1;
-  }
+  //   .landingPage-slider-desktop {
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: center;
+  //     margin-left: 10vw;
+  //     width: 50em;
+  //     height: 50em;
+  //     max-height: 55%;
+  //     margin-right: 2em;
+  //     z-index: 3;
+  //   }
+
+  //   .landing-slogan {
+  //     position: static;
+  //     display: flex;
+  //     flex-direction: column;
+  //     align-items: center;
+  //     height: 100%;
+  //     path {
+  //       fill: $primary;
+  //     }
+  //   }
+
+  //   .landingPage-slider {
+  //     display: none;
+  //   }
+  //   .landing-backgroundImage {
+  //     object-fit: cover;
+  //     width: 600px;
+  //     height: 600px;
+  //   }
+
+  //   .landing-slogan {
+  //     display: flex;
+  //     flex-direction: column;
+  //     align-items: center;
+  //     height: 100%;
+  //   }
+  //   .landing-sloganFondo {
+  //     display: none;
+  //   }
+  //   .landing-sloganFondo-desktop {
+  //     display: block;
+  //     position: absolute;
+  //     transform: translateY(-18%);
+  //     z-index: -1;
+  //     left: 0;
+  //     height: 100vh;
+  //     width: 50%;
+  //   }
+
+  //   .arrows {
+  //     gap: 10em;
+  //     transform: translateX(0) !important;
+  //   }
+  //   .mobile {
+  //     display: none;
+  //   }
+  //   .desktop {
+  //     line-height: 1.8em;
+  //     height: 7.5em;
+  //     display: block;
+  //     color: $primary;
+  //     transform: translateY(0) !important;
+  //     text-align: left;
+  //   }
+
+  //   .slide {
+  //     opacity: 1;
+  //   }
+  // }
 }
-
 @media only screen and (min-width: 1400px) {
-  .landingPage-slider-desktop {
-    margin-left: 20vw;
-  }
+  //   .landingPage-slider-desktop {
+  //     margin-left: 20vw;
+  //   }
 
-  .landing-slogan {
-    align-items: start;
-  }
+  //   .landing-slogan {
+  //     align-items: start;
+  //   }
 
   .desktop {
-    line-height: 2.2em;
+    font-size: 4em;
   }
 
   .arrows {
-    margin: 1em 4em;
+    font-size: 1.2em;
   }
+
+  //   .arrows {
+  //     margin: 1em 4em;
+  //   }
+  // }
 }

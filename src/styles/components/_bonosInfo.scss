@@ -24,6 +24,80 @@
   }
 }
 
+.question-header {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  border-bottom: 1px solid #e0e0e0;
+  background: rgba($color: #c7c7c7, $alpha: 0.3);
+}
+
+.question-header,
+.question-header * {
+  transition: all 0.5s ease !important;
+}
+
+.question-header.expanded {
+  background: hsl(0, 0%, 100%);
+}
+
+.title {
+  display: block;
+  position: relative;
+  width: inherit;
+}
+
+.title h3 {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1.2em;
+  line-height: 130%;
+}
+
+.plus-sign {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 40%;
+  user-select: none;
+  cursor: pointer;
+  --thickness: 2px;
+  width: 15px;
+  aspect-ratio: 1;
+  border-color: transparent;
+  background: conic-gradient(
+      from 90deg at var(--thickness) var(--thickness),
+      transparent 90deg,
+      #000 0
+    )
+    calc(100% + var(--thickness) / 2) calc(100% + var(--thickness) / 2) /
+    calc(50% + var(--thickness)) calc(50% + var(--thickness));
+}
+
+.plus-sign.expanded {
+  transform: rotate(90deg);
+  background: conic-gradient(
+      from 0deg at var(--thickness) var(--thickness),
+      transparent 180deg,
+      #000 0
+    )
+    calc(100% + var(--thickness) / 2) calc(100% + var(--thickness) / 2) /
+    calc(50% + var(--thickness)) calc(50% + var(--thickness));
+}
+
+.answer-to-questions {
+  overflow: hidden;
+  max-height: 0;
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
+.answer-to-questions.expanded {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 @media only screen and (min-width: 768px) {
   .bonosVivienda {
     .homepage-title {

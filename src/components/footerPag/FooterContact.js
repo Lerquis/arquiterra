@@ -21,9 +21,28 @@ export const FooterContact = () => {
     }, 1000);
   };
 
+  window.addEventListener("load", () => {
+    const footer = document.querySelector(".footerContacto");
+    const footerBottom = Math.round(footer.getBoundingClientRect().bottom);
+    const documentHeight = document.documentElement.offsetHeight;
+
+    if (documentHeight > footerBottom) {
+      footer.classList.add("footerAbsolute");
+    } else {
+      footer.classList.remove("footerAbsolute");
+    }
+    window.addEventListener("resize", () => {
+      if (documentHeight > footerBottom) {
+        footer.classList.add("footerAbsolute");
+      } else {
+        footer.classList.remove("footerAbsolute");
+      }
+    });
+  });
+
   return (
     <div
-      className="footer animate__animated notSeen topbarObserver"
+      className="footer animate__animated notSeen topbarObserver footerContacto"
       data-animacion="fadeInDown"
       data-porcentaje="mitad"
     >

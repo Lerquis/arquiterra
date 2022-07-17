@@ -14,7 +14,7 @@ if (window.innerWidth > 1200) {
     lineas.forEach((linea) => {
       tl.from(document.querySelector(`.${linea.className}`), {
         duration: 0.35,
-        y: 2000,
+        background: "#2a2932",
       });
     });
 

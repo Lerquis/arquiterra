@@ -126,8 +126,27 @@
   }
 }
 
-@media only screen and(min-width:1600px) {
-  .footer {
-    margin: 0 20em;
-  }
+// @media only screen and(min-width:1600px) {
+//   .footer {
+//     margin: 0 20em;
+//   }
+// }
+// @media only screen and (min-height: 1600px) {
+//   .footer {
+//     position: absolute;
+//     bottom: 0;
+//     width: 1000px;
+//     left: 50%;
+//     transform: translateX(-50%) !important;
+//     margin: 0;
+//   }
+// }
+
+.footerAbsolute {
+  position: absolute;
+  bottom: 0;
+  width: 1000px;
+  left: 50%;
+  transform: translateX(-50%) !important;
+  margin: 0;
 }

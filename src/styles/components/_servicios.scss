@@ -23,7 +23,7 @@
   text-align: center;
   display: flex;
   justify-content: center;
-  margin-bottom: 20vh;
+  margin-bottom: 15em;
   .servicio-bonoViviendaImg {
     height: 20em;
     width: 100vw;
@@ -71,7 +71,6 @@
 @media only screen and(min-width:1100px) {
   .servicios-container {
     width: 100%;
-    display: grid;
     grid-template-rows: 1fr 1fr;
     .servicios-containerFila:nth-child(1) {
       width: 100%;

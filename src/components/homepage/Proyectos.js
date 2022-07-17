@@ -11,6 +11,8 @@ export const Proyectos = () => {
 
     const proyectosDB = response.data;
 
+    proyectosDB.reverse();
+
     for (let i = 0; i < 3; i++) {
       if (proyectosDB[i]) {
         setProyectos((prevArray) => [...prevArray, proyectosDB[i]]);

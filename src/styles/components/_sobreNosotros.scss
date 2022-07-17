@@ -51,7 +51,9 @@
     }
     .sobreNosotros-imagen {
       height: 100vh;
+      max-height: 1080px;
       p {
+        max-height: 1080px;
         padding: 0 2.5em;
         font-size: 1.5em;
       }

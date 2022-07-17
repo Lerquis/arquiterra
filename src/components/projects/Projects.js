@@ -98,7 +98,7 @@ export const Projects = () => {
     const data = await fetchFun("proyecto/proyectos");
     const response = await data.json();
 
-    setProjects(response.data);
+    setProjects(response.data.reverse());
     setLoading(true);
   }, []);
 
